@@ -15,3 +15,4 @@ for item in ${arr[*]}; do
 done
 
 
+echo ${arr[*]}

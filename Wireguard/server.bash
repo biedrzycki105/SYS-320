@@ -1,8 +1,18 @@
-
 #!/bin/bash
-
 # Storyline: Script to create a wireguard server
+if test -f ./wg0.conf ; then
+    echo "Wireguard configuration file exists"
+    read -p 'Would you like to overwrite this file? y/n [n] : ' yesno
+    # echo $yesno
+    if [ "$yesno" == "y" ]; then
+        echo "Completing Wireguard configuration"
+        else
+          echo "Exiting"
+          exit
+    fi 
+fi             
 # Create a private key
+# echo "THE PROGRAM DID NOT EXIT"
 p="$(wg genkey)"
 echo "${p}" > /etc/wireguard/server_private.key
 
