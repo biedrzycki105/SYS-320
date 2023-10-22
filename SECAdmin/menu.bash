@@ -83,8 +83,8 @@ function vpn_menu() {
 	read -p "Please  enter a choice above:" choice
 	case "$choice" in
 	A|a)
-	  bash peer.bash
-	  tail -6 wg0.conf |less
+	  bash ../Wireguard/peer.bash
+	  tail -6 ../Wireguard/wg0.conf |less
 	;;
 	D|d) #Create a promtp for the user
 		read -p "Please specify a user" user

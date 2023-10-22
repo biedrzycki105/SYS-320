@@ -47,20 +47,20 @@ fi
 if [[ ${u_del} ]]
 then
 	echo "Deleting user..."
-	sed -i "/# ${t_user} begin/,/# ${t_user} end/d" wg0.conf
+	sed -i "/# ${t_user} begin/,/# ${t_user} end/d" ../Wireguard/wg0.conf
 fi
 
 # Add a user
 if [[ ${u_add} ]]
 then
 	echo "Creating the User..."
-	bash peer.bash ${t_user}
+	bash ../Wireguard/peer.bash ${t_user}
 fi
 
 # Check to see if a user exists
 if [[ ${u_check}  ]]
 then
-	result=$(cat wg0.conf | grep ${t_user})
+	result=$(cat ../Wireguard/wg0.conf | grep ${t_user})
 	if [[ ${result} != ""  ]]
 	then
 		echo "The user ${t_user} exists."

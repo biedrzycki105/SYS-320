@@ -12,7 +12,7 @@ if test -f ./wg0.conf ; then
     fi 
 fi             
 # Create a private key
-echo "THE PROGRAM DID NOT EXIT"
+# echo "THE PROGRAM DID NOT EXIT"
 p="$(wg genkey)"
 echo "${p}" > /etc/wireguard/server_private.key
 
