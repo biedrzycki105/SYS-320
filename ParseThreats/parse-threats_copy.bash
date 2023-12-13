@@ -8,7 +8,7 @@
 function create_badIPs() {
 
 	# Pull the emerging-drop.suricata.rules file from the website and make it into the file emerging-drop.suricata.rules in the tmp directory
-	wget https://rules.emergingthreats.net/blockrules/emerging-drop.suricata.rules -O /tmp/emerging-drop.suricata.rules
+	wget http://rules.emergingthreats.net/blockrules/emerging-drop.suricata.rules -O /tmp/emerging-drop.suricata.rules
 
 	# read the emerging-drop.suricata.rules file and organize it to create the badips.txt file
 	egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.0/[0-9]{1,2}' /tmp/emerging-drop.suricata.rules | sort -u | tee badips.txt
